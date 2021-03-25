@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 90%;
+    background: url("images/bg.jpg") no-repeat center center fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz {
+    position: relative;
+    width: 40%;
+    min-width: fit-content;
+    margin: 20px auto;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.pregunta {
+    line-height: 2;
+    margin: 0 auto;
+    border-radius: 25px 25px 0px 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+    
+    font-family: 'Fira Sans', sans-serif;
+    color: darkred;
+    text-align: center;
+}
+
+.items {
+    margin: 20px 10px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    perspective: 1000px;
+}
+
+.item {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transition:all 1s linear;
+    transform-style: preserve-3d;
+}
+
+
+.front, 
+.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    text-align: center;
+}
+
+.front {
+    background-color: rgba(245, 199, 115);
+    color:rgb(70, 97, 107);
+    z-index: 2;
+    backface-visibility: hidden;
+
+}
+.back {
+    background-color: rgba(70, 97, 107);
+    color:rgb(245, 199, 115);
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.item:hover {
+    transform:rotateY(180deg);
+}
